@@ -1,0 +1,123 @@
+#portfolio {
+	.content {
+		height: 825px;
+		overflow: hidden;
+
+		@include breakpoint($wide-screen) { /* max-width: 1199 */
+			height: 717px;
+		}
+	}
+}
+
+.filter-options {
+	text-align: center;
+	padding-bottom: 99px;
+
+	a {
+		border: 1px solid $color-menu;
+		color: $color-menu;
+		display: inline-block;
+		font-family: $ptsans;
+		@include rem(font-size, 16px);
+		padding: 8px 14px;
+		margin: 0 12px;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover {
+			border: 1px solid $color-main;
+		}
+
+		&.active {
+			background: $color-main;
+			border: 1px solid $color-edu;
+			color: $color-white;
+		}
+	}
+
+	@include breakpoint($tablet) { /* max-width: 991 */
+		padding-bottom: 50px;
+
+		a {
+			margin: 0 7px;
+			padding: 5px 8px;
+		}
+	}
+}
+
+#grid {
+	position:relative;
+	overflow: hidden;
+	width: 100%;
+
+	.item {
+		box-sizing: border-box;
+		margin: 0 0 30px;
+		float: left;
+
+		&.wide {
+			width: 65.8%;
+		}
+		&.narrow {
+			width: 31.6%;
+		}
+
+		a {
+			display: block;
+			width: 100%;
+
+			img {
+				vertical-align: top;
+			}
+		}
+
+		@include breakpoint($tablet) { /* max-width: 991 */
+			&.wide {
+				width: 49%;
+			}
+			&.narrow {
+				width: 49%;
+			}
+		}
+
+		@include breakpoint($mobile-small) { /* max-width: 400 */
+			&.wide {
+				width: 100%;
+			}
+			&.narrow {
+				width: 100%;
+			}
+		}
+	}
+
+	.shuffle_sizer {
+		position: absolute;
+		margin-left: 30px;
+		height: 20px;
+
+		&.wide {
+			width: 65.8%;
+		}
+		&.narrow {
+			width: 31.6%;
+		}
+
+		@include breakpoint($tablet) { /* max-width: 991 */
+			&.wide {
+				width: 49%;
+			}
+			&.narrow {
+				width: 49%;
+			}
+		}
+
+		@include breakpoint($mobile-small) { /* max-width: 400 */
+			&.wide {
+				width: 100%;
+			}
+			&.narrow {
+				width: 100%;
+			}
+		}
+	}
+}

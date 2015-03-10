@@ -1,0 +1,109 @@
+html {
+	font-size: 62.5%;
+}
+
+body {
+  font-family: $ptsans;
+  color: $color-base-text;
+  @include rem(font-size, 16px);
+  @include rem(line-height, 24px);
+  letter-spacing: 0.4px;
+  position: relative;
+  min-width: 320px;
+}
+
+.site-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+p {
+	margin: 0 0 15px;
+}
+
+a {
+	color: $color-main;
+	
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+#{headings(all)} {
+  color: $color-menu;
+  @include rem(line-height, 36px);
+  font-family: $oswald;
+  letter-spacing: normal;
+  line-height: normal;
+  font-weight: normal;
+  margin: 0 0 22px;
+}
+
+h1 {
+	@include rem(font-size, 30px);
+}
+h2 {
+	@include rem(font-size, 24px);
+
+  &.section-title {
+    border: 1px solid $color-black;
+    @include rem(font-size, 36px);
+    font-family: $oswald;
+    padding: 9px 0;
+    position: relative;
+    margin: 0 auto 89px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 297px;
+
+    @include breakpoint($tablet) { /* max-width: 767 */
+      @include rem(font-size, 32px);
+      padding: 6px 0;
+      width: 237px;
+    }
+
+    @include breakpoint($mobile-medium) { /* max-width: 991 */
+      margin: 0 auto 45px;
+    }
+  }
+}
+h3 {
+	@include rem(font-size, 20px);
+}
+h4 {
+	@include rem(font-size, 18px);
+  text-transform: uppercase;
+}
+h5 {
+	@include rem(font-size, 16px);
+  color: $color-base-text;
+  font-family: $ptsans;
+  text-transform: uppercase;
+}
+h6 {
+	@include rem(font-size, 12px);
+}
+
+.dropcap {
+  border-radius: 50%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  float: left;
+  font-weight: bold;
+  font-size: 22px;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 12px;
+  text-align: center;
+  width: 40px;
+  
+  &.dropcap__primary {
+  	@include background-image(linear-gradient(#c06e30, #b05726));
+	}
+	&.dropcap__secondary {
+  	@include background-image(linear-gradient(#3f3931, #312d27));
+	}
+	&.dropcap__tertiary {
+  	background: $color-white;
+	}
+}

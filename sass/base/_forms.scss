@@ -1,0 +1,69 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+textarea {
+	background: $color-white;
+	// border: 1px solid $color-tabs-border;
+	box-sizing: border-box;
+	color: #777;
+	display: inline-block;
+	font-family: $ptsans;
+	font-size: 14px;
+	font-weight: 300;
+	margin: 0;
+	max-width: 100%;
+	outline: medium none;
+	padding: 6px 10px 5px;
+	width: 100%;
+	transition: all 0.2s ease-in-out;
+	-webkit-appearance:none;
+	
+	//&:focus {
+		// border-color: $color-main-light;
+		// outline: 1px solid #fff;
+		//box-shadow: 0 0 4px rgba(0, 107, 164, 0.5);
+	//}
+}
+
+input[type="submit"],
+input[type="button"] {
+	border: none;
+	outline: none;
+}
+
+label {
+	@include rem(font-size, 16px);
+	font-weight: normal;
+	font-family: $ptsans;
+	letter-spacing: 0.6px;
+	display: block;
+	padding-bottom: 10px;
+	position: relative;
+
+	.form-required {
+		color: $color-require;
+	}
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + label:before {
+		content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: -1px 10px 0 0;
+    vertical-align: middle;
+    background: image-url('checkbox.png') no-repeat 0 bottom;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked + label:before {
+    background: image-url('checkbox.png') no-repeat 0 0;
+}
+
+.form-item {
+	margin-bottom: 25px;
+}

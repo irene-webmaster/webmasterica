@@ -1,0 +1,157 @@
+#skills {
+	.title-wrapper {
+		text-align: center;
+	}
+
+	h3 {
+		background: image-url("bg-li-resume.png") no-repeat center bottom;
+		@include rem(font-size, 28px);
+		display: inline-block;
+		margin-bottom: 54px;
+		padding: 0 20px 20px;
+		position: relative;
+
+		&:before, &:after {
+			background: $color-edu;
+			bottom: 4px;
+			content: "";
+			display: block;
+			height: 1px;
+			position: absolute;
+			width: 35%;
+		}
+
+		&:before {
+			left: 0;
+			margin-right: 10px;
+		}
+		&:after {
+			right: 0;
+			margin-left: 10px;
+		}
+	}
+
+	.software-skills {
+		@include span(6);
+
+		.progressbar{
+			background: $color-progressbar;
+			box-shadow: 0 1px 2px rgba(0,0,0,.2);
+			position: relative;
+			margin-bottom: 58px;
+			margin-left: 30px;
+			height: 42px;
+		}
+
+		.progress {
+			background: $color-progress;
+			height: 42px;
+			width: 0;
+		}
+
+		.skill-icon {
+			background: $color-main;
+			box-sizing: border-box;
+			color: $color-white;
+			@include rem(font-size, 28px);
+			font-family: $opensans;
+			font-weight: 300;
+			display: inline-block;
+			width: 58px;
+			height: 58px;
+			padding: 17px 0 0 11px;
+			margin: -8px 0 -10px -20px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			// text-align: center;
+			text-shadow: 1px 1px 4px rgba(0,0,0,.29);
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			transform: rotate(45deg);
+
+			span {
+				display: inline-block;
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+		}
+
+		.value {
+			color: $color-menu;
+			@include rem(font-size, 24px);
+			@include rem(line-height, 40px);
+			display: none;
+			font-family: $oswald;
+			position: absolute;
+			right: 10px;
+			top: 0;
+		}
+	}
+
+	.hobbies {
+		@include span(6 last);
+
+		.col-1 {
+			@include span(3 of 6);
+		}
+		.col-2 {
+			@include span(3 of 6 last);
+		}
+
+		li {
+			background: $color-progressbar;
+			@include rem(font-size, 28px);
+			font-family: $ptsans;
+			position: relative;
+			margin-bottom: 58px;
+			margin-left: 50px;
+			height: 42px;
+		}
+
+		.hobbie-icon {
+			background: $color-main;
+			box-sizing: border-box;
+			color: $color-white;
+			display: inline-block;
+			overflow: hidden;
+			width: 58px;
+			height: 58px;
+			padding: 15px 0 0 14px;
+			margin: -8px 0 -10px -40px;
+			position: absolute;
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			transform: rotate(45deg);
+
+			i {
+				@include rem(font-size, 28px);
+				text-align: center;
+				text-shadow: 1px 1px 4px rgba(0,0,0,.29);
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+		}
+
+		.hobbie-name {
+			display: block;
+			@include rem(line-height, 40px);
+			text-align: center;
+		}
+
+		@include breakpoint($mobile-medium) { /* max-width: 767 */
+			.col-1, .col-2 {
+				@include span(12);
+			}
+		}
+	}
+
+	@include breakpoint($tablet) { /* max-width: 767 */
+		.software-skills,
+		.hobbies {
+			@include span(12);
+		}
+	}
+}

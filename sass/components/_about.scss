@@ -1,0 +1,274 @@
+.about-me {
+	border: 1px solid $color-black;
+	@include pie-clearfix;
+
+	@include breakpoint($tablet) { /* max-width: 991 */
+		margin-top: 410px;
+		position: relative;
+	}
+
+	@include breakpoint($mobile-medium) { /* max-width: 550 */
+		margin-top: 340px;
+	}
+
+	.me {
+		@include span(4);
+		position: relative;
+
+		img {
+			margin: -11px 0;
+			position: relative;
+		}
+
+		.overlay {
+			background: image-url("right-img-overlay.png") no-repeat right 0;
+			width: 372px;
+			height: 372px;
+			position: absolute;
+			top: -11px;
+			left: -1px;
+
+			&:before {
+				background: image-url("left-img-overlay.png") no-repeat 0 0;
+				content: "";
+				position: absolute;
+				width: 372px;
+				height: 372px;
+				top: 0;
+				left: 0;
+			}
+
+			&:after {
+				border: 1px solid $color-white;
+				content: "";
+				position: absolute;
+				width: 248px;
+				height: 248px;
+				top: 60px;
+				left: 60px;
+				-webkit-transform: rotate(45deg);
+				-moz-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+		}
+
+		@include breakpoint($wide-screen) { /* max-width: 1199 */
+			@include span(4 of 10);
+		}
+
+		@include breakpoint($tablet) { /* max-width: 991 */
+			position: absolute;
+			top: -348px;
+			transform: translateX(-50%);
+			left: 50%;
+			margin: 0;
+			width: 370px;
+			
+			.overlay {
+				background: image-url("right-img-overlay-small.png") no-repeat right 0;
+
+				&:before {
+					background: image-url("left-img-overlay-small.png") no-repeat 0 0;
+				}
+			}
+		}
+
+		@include breakpoint($mobile-medium) { /* max-width: 550 */
+			top: -276px;
+			width: 299px;
+
+			.overlay {
+				background: image-url("right-img-overlay-small2.png") no-repeat right center;
+				width: 300px;
+				height: 300px;
+			
+				&:before {
+					background: image-url("left-img-overlay-small2.png") no-repeat 0 center;
+					width: 300px;
+					height: 300px;
+				}
+				&:after {
+					width: 198px;
+					height: 198px;
+					top: 49px;
+					left: 50px;
+				}
+			}
+		}
+	}
+
+	.short-resume {
+		@include span(3);
+
+		h4 {
+			@include rem(font-size, 19px);
+			text-align: center;
+			margin: 35px 0 18px;
+		}
+
+		li {
+			background: image-url("bg-li-resume.png") no-repeat center bottom;
+			padding: 8px 0 18px;
+			position: relative;
+
+			&:before, &:after {
+				background: $color-edu;
+				bottom: 4px;
+				content: "";
+				display: block;
+				height: 1px;
+				position: absolute;
+				width: 44%;
+			}
+
+			&:before {
+				left: 0;
+				margin-right: 10px;
+			}
+			&:after {
+				right: 0;
+				margin-left: 10px;
+			}
+
+			&:last-child {
+				background: none;
+
+				&:before, &:after {
+					display: none;
+				}
+			}
+
+			a {
+				color: $color-base-text;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		@include breakpoint($wide-screen) { /* max-width: 1199 */
+			h4 {
+				margin: 25px 0 15px;
+			}
+
+			li {
+				@include rem(font-size, 15px);
+			}
+		}
+
+		@include breakpoint($tablet) { /* max-width: 991 */
+			@include span(6);
+
+			ul {
+				padding-left: 20px;
+			}
+		}
+
+		@include breakpoint($mobile-medium) { /* max-width: 550 */
+			@include span(12);
+
+			ul {
+				padding: 0 20px;
+			}
+		}
+	}
+	.short-profile {
+		@include span(3);
+
+		h4 {
+			@include rem(font-size, 19px);
+			margin: 35px 0 26px;
+			text-align: center;
+		}
+
+		p {
+			margin-bottom: 24px;
+		}
+
+		@include breakpoint($wide-screen) { /* max-width: 1199 */
+			h4 {
+				margin: 25px 0 15px;
+			}
+
+			p {
+				@include rem(font-size, 15px);
+				margin-bottom: 10px;
+			}
+		}
+
+		@include breakpoint($tablet) { /* max-width: 991 */
+			box-sizing: border-box;
+			@include span(6 last);
+			padding: 0 20px;
+		}
+
+		@include breakpoint($mobile-medium) { /* max-width: 550 */
+			@include span(12);
+		}
+	}
+	.socials {
+		@include span(2 last);
+		padding-top: 17px;
+		text-align: center;
+
+		li {
+			padding: 18px 0;
+		}
+
+		a {
+			border: 1px solid $color-social;
+			box-shadow: 0 0 2px rgba(0,0,0,.2);
+			box-sizing: border-box;
+			display: inline-block;
+			padding: 7px 1px 7px 0px;
+			@include rem(font-size, 30px);
+			color: $color-social;
+			width: 45px;
+			height: 45px;
+			text-align: center;
+			text-shadow: 1px 1px 3px rgba(0,0,0,.2);
+			text-decoration: none;
+			-webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+			transform: rotate(45deg);
+
+			&:hover {
+				border: 1px solid $color-main;
+			}
+
+			i{
+				-webkit-transform: rotate(-45deg);
+				-moz-transform: rotate(-45deg);
+				transform: rotate(-45deg);
+			}
+		}
+
+		@include breakpoint($wide-screen) { /* max-width: 1199 */
+			@include span(1 of 10 last);
+
+			a {
+				width: 35px;
+				height: 35px;
+				@include rem(font-size, 20px);
+				padding: 4px 1px 0 0px;
+			}
+		}
+
+		@include breakpoint($tablet) { /* max-width: 991 */
+			@include span(6 last);
+			padding: 0 0 10px;
+			text-align: center;
+
+			li {
+				display: inline-block;
+				margin: 0 5%;
+			}
+		}
+
+		@include breakpoint($mobile-medium) { /* max-width: 550 */
+			@include span(12);
+		}
+	}
+}

@@ -1,0 +1,153 @@
+.top-bg {
+	background: image-url('bg-header.jpg') no-repeat fixed center top;
+	position: relative;
+	height: 675px;
+	
+	@include breakpoint($wide-screen) { /* max-width: 1199 */
+		height: 500px;
+	}
+
+	@include breakpoint($mobile) { /* max-width: 499 */
+		display: none;
+	}
+	
+	.overlay {
+		background: image-url('bg-overlay.png') rgba(106,120,123,.65);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+	}
+
+	.scrolldown {
+		position: absolute;
+		bottom: 30px;
+		left: 50%;
+		height: 100px;
+		transform: translateX(-50%);
+		text-align: center;
+
+		.icon-mouse {
+			background: image-url('icon-mouse.png') no-repeat 0 0;
+			display: block;
+			width: 31px;
+			height: 57px;
+		}
+
+		.fa {
+			display: inline-block;
+			color: $color-white;
+			@include rem(font-size, 42px);
+
+			-webkit-animation: scrolldown 1.5s ease infinite;
+			-moz-animation: scrolldown 1.5s ease infinite;
+			animation: scrolldown 1.5s ease infinite;
+		}
+	}
+}
+
+.top-logo {
+	margin: 35px 0 0 35px;
+	display: inline-block;
+	position: relative;
+	z-index: 100;
+
+	@include breakpoint($mobile-medium) { /* max-width: 550 */
+		margin: 0;
+		display: block;
+		padding-top: 35px;
+	}
+}
+
+.nav-main {
+	background: $color-white;
+	box-shadow: 0 0 3px rgba(0,0,0, .2);
+
+	.container {
+		position: relative;
+	}
+
+	&.sticky {
+		position: fixed;
+		width: 100%;
+		transition: transform 200ms linear;
+		z-index: 500;
+		
+		&.headroom--pinned {
+			transform: translateY(0%);
+		}
+		&.headroom--unpinned {
+			transform: translateY(-100%);
+		}
+
+		.logo {
+			a {
+				padding: 12px 25px;
+			}
+		}
+
+		.flexnav li a {
+			padding: 11px 16px 10px;
+
+			@include breakpoint($tablet) { /* max-width: 991 */
+				padding: 11px 13px 10px;
+			}
+		}
+
+		.touch-button {
+			top: 10px;
+		}
+	}
+	
+
+	.logo {
+		@include span(4);
+
+		a {
+			background: $color-main;
+			color: $color-white;
+			@include rem(font-size, 18px);
+			display: inline-block;
+			font-family: $oswald;
+			padding: 30px 25px;
+			text-transform: uppercase;
+			text-align: center;
+			text-decoration: none;
+			
+			.normal{
+				display: inline;
+			}
+			.small {
+				display: none;
+			}
+		}
+
+		@include breakpoint($tablet) { /* max-width: 991 */
+			@include span(3);
+		}
+		@include breakpoint($mobile-landscape) { /* max-width: 767 */
+			a {
+				padding: 20px 25px;
+				
+				.normal {
+					display: none;
+				}
+				.small {
+					display: inline;
+				}
+			}
+		}
+	}
+	.main-menu {
+		@include span(8 last);
+		text-align: right;
+
+		@include breakpoint($tablet) { /* max-width: 991 */
+			@include span(9 last);
+		}
+
+		@include breakpoint($mobile-landscape) { /* max-width: 991 */
+			background: $color-white;
+			width: 100%;
+		} 
+	}
+}

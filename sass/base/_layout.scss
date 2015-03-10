@@ -1,0 +1,31 @@
+@import 'breakpoint';
+
+$wide-screen: max-width 1199px;
+$tablet: max-width 991px;
+$mobile-landscape: max-width 767px;
+$mobile-medium: max-width 550px;
+$mobile-small: max-width 400px;
+$mobile: max-width 499px;
+
+.container {
+	@include container($susy);
+
+	@include breakpoint($wide-screen) { /* max-width: 1199 */
+		@include container(10);
+		margin: 0 auto;
+	}
+	@include breakpoint($tablet) { /* max-width: 991 */
+		@include container(7.7);
+		margin: 0 auto;
+	}
+	@include breakpoint($mobile-landscape) { /* max-width: 767 */
+		@include container(12);
+		margin: 0 15px;
+	}
+	// @include breakpoint($mobile) { /* max-width: 499 */
+	// 	@include container(12);
+	// 	margin: 0 10px;
+	// 	padding-left: 0;
+	// 	padding-right: 0;
+	// }
+}

@@ -1,0 +1,225 @@
+#education, #expirience {
+	background: $color-section;
+
+	.content {
+		background: image-url("edu-line.gif") repeat-y center;
+		padding-top: 20px;
+	}
+	
+	.wrapper-block {
+		overflow: hidden;
+		padding: 12px 0 20px;
+	}
+}
+
+.edu-block {
+	background: $color-section;
+	border: 1px solid $color-edu;
+	box-sizing: border-box;
+	float: left;
+	padding: 20px;
+	max-width: 510px;
+	position: relative;
+
+	@include breakpoint($wide-screen) { /* max-width: 1199 */
+		max-width: 410px;
+		padding: 10px;
+	}
+
+	h4 {
+		@include rem(font-size, 19px);
+		margin: 15px 0 0;
+	}
+	h5 {
+		margin: 7px 0 17px;
+	}
+
+	&.left {
+		margin-right: 46px;
+		padding-left: 160px;
+
+		@include breakpoint($wide-screen) { /* max-width: 1199 */
+			padding-left: 130px;
+		}
+
+		&:after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			position: absolute;
+			right: -8px;
+			top: 20px;
+			border-top: 7px solid transparent;
+			border-left: 8px solid $color-section;
+			border-bottom: 7px solid transparent;
+			z-index: 101;
+		}
+		&:before {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			position: absolute;
+			right: -9px;
+			top: 20px;
+			border-top: 7px solid transparent;
+			border-left: 8px solid $color-edu;
+			border-bottom: 7px solid transparent;
+			z-index: 100;
+		}
+
+		.edu-date {
+			left: -16px;
+			-webkit-transform: rotate(-90deg) translateX(15%);
+			-moz-transform: rotate(-90deg) translateX(15%);
+			transform: rotate(-90deg) translateX(15%);
+
+			@include breakpoint($wide-screen) { /* max-width: 1199 */
+				left: -30px;
+			}
+		}
+	}
+
+	&.right {
+		float: right;
+		margin-left: 46px;
+		padding-right: 150px;
+		padding-left: 40px;
+
+		@include breakpoint($wide-screen) { /* max-width: 1199 */
+			padding-right: 130px;
+			padding-left: 25px;
+		}
+		
+		&:after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			position: absolute;
+			left: -8px;
+			top: 20px;
+			border-top: 7px solid transparent;
+			border-right: 8px solid $color-section;
+			border-bottom: 7px solid transparent;
+			z-index: 101;
+		}
+		&:before {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			position: absolute;
+			left: -9px;
+			top: 20px;
+			border-top: 7px solid transparent;
+			border-right: 8px solid $color-edu;
+			border-bottom: 7px solid transparent;
+			z-index: 100;
+		}
+
+		&+span {
+			float: right;
+		}
+
+		.edu-date {
+			right: -16px;
+			-webkit-transform: rotate(90deg) translateX(-15%);
+			-moz-transform: rotate(90deg) translateX(-15%);
+			transform: rotate(90deg) translateX(-15%);
+
+			@include breakpoint($wide-screen) { /* max-width: 1199 */
+				right: -30px;
+			}
+		}
+	}
+
+	.edu-date {
+		border: 1px solid $color-edu;
+		display: inline-block;
+		float: left;
+		padding: 9px 0;
+		@include rem(font-size, 18px);
+		position: absolute;
+		top: 50%;
+		width: 154px;
+		text-align: center;
+
+		&:after {
+			background: image-url("../images/bg-date.png") no-repeat 0 0;
+			content: "";
+			display: block;
+			height: 176px;
+			width: 9px;
+			position: absolute;
+			top: -7px;
+			left: 73px;
+			-webkit-transform: rotate(90deg);
+			-moz-transform: rotate(90deg);
+			transform: rotate(90deg);
+
+			@include breakpoint($wide-screen) { /* max-width: 1199 */
+				top: -17px;
+			}
+		}
+	}
+
+	@include breakpoint($tablet) { /* max-width: 991 */
+		max-width: 100%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin: 55px 0 20px !important;
+
+		&:before, &:after {
+			display: none !important;
+		}
+	}
+
+	@include breakpoint($mobile-small) { /* max-width: 991 */
+		padding: 0 20px 10px !important;
+
+		.edu-date {
+			position: relative !important;
+			float: none;
+			left: auto !important;
+			right: auto !important;
+			display: block;
+			margin: 40px auto 60px;
+			-webkit-transform: rotate(0) translateX(0) !important;
+			-moz-transform: rotate(0) translateX(0) !important;
+			transform: rotate(0) translateX(0) !important;
+		}
+	}
+}
+
+.block-ico {
+	background: $color-main;
+	box-sizing: border-box;
+	color: $color-white;
+	display: inline-block;
+	overflow: hidden;
+	width: 58px;
+	height: 58px;
+	padding: 13px 0 0 12px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+	i {
+		@include rem(font-size, 28px);
+		text-align: center;
+		text-shadow: 1px 1px 4px rgba(0,0,0,.29);
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+
+	@include breakpoint($tablet) { /* max-width: 991 */
+		position: absolute;
+		left: 50%;
+		-webkit-transform: translateX(-50%) rotate(45deg);
+		-moz-transform: translateX(-50%) rotate(45deg);
+		transform: translateX(-50%) rotate(45deg);
+	}
+}

@@ -1,0 +1,9 @@
+img, media {
+  max-width: 100%;
+  vertical-align: top;
+  height: auto !important;
+}
+
+#map_canvas img { //Google map fix
+	max-width:none;
+}

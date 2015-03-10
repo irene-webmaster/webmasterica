@@ -1,0 +1,9 @@
+section {
+	.container {
+		padding: 100px 0;
+
+		@include breakpoint($mobile-medium) { /* max-width: 550 */
+			padding: 70px 0;
+		}
+	}
+}

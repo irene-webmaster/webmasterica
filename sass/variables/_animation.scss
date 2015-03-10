@@ -1,0 +1,35 @@
+@-webkit-keyframes scrolldown {
+	0%{
+    margin-top: 0;
+	}
+	50%{
+    margin-top: 10px;
+	}
+	100%{
+    margin-top: 0;
+	}
+}
+
+@-moz-keyframes scrolldown {
+	0%{
+    margin-top: 0;
+	}
+	50%{
+    margin-top: 10px;
+	}
+	100%{
+    margin-top: 0;
+	}
+}
+
+@keyframes scrolldown {
+	0%{
+    margin-top: 0;
+	}
+	50%{
+    margin-top: 10px;
+	}
+	100%{
+    margin-top: 0;
+	}
+}

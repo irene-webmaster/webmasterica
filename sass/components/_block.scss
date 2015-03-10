@@ -1,0 +1,10 @@
+/* Blocks */
+.block {
+	margin-bottom: 40px;
+
+	.block-title {
+		@include rem(font-size, 24px);
+		line-height: normal;
+		margin-bottom: 15px;
+	}
+}

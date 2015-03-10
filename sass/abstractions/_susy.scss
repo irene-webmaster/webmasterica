@@ -1,0 +1,10 @@
+// Susy settings
+
+$susy: (
+	columns: 12,
+	column-width: 70px,
+	gutters: 30px/70px,
+	math: fluid,
+	output: float,
+	gutter-position: after,
+);
